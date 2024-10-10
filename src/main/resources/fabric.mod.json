@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "easychannels",
+  "version": "${version}",
+  "name": "EasyChannels",
+  "description": "Chat channels for fabric",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/easychannels/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "net.riser876.easychannels.EasyChannels"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

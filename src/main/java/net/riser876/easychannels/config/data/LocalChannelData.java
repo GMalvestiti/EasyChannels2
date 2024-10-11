@@ -2,7 +2,7 @@ package net.riser876.easychannels.config.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class LocalData {
+public class LocalChannelData {
     @SerializedName("enabled")
     public boolean enabled = true;
 

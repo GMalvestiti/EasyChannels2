@@ -7,14 +7,14 @@ import java.util.List;
 
 public class ConfigData {
     @SerializedName("local")
-    public LocalData local = new LocalData();
+    public LocalChannelData localChannel = new LocalChannelData();
 
     @SerializedName("channels")
-    public List<ChannelData> channels = createDefaultChannels();
+    public List<CustomChannelData> customChannels = createDefaultCustomChannels();
 
-    private static List<ChannelData> createDefaultChannels() {
-        List<ChannelData> defaultChannels = new ArrayList<>();
-        defaultChannels.add(new ChannelData());
-        return defaultChannels;
+    private static List<CustomChannelData> createDefaultCustomChannels() {
+        List<CustomChannelData> defaultCustomChannels = new ArrayList<>();
+        defaultCustomChannels.add(new CustomChannelData());
+        return defaultCustomChannels;
     }
 }

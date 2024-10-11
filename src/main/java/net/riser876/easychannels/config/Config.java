@@ -5,9 +5,9 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.riser876.easychannels.config.data.ChannelData;
 import net.riser876.easychannels.config.data.ConfigData;
-import net.riser876.easychannels.config.data.LocalData;
+import net.riser876.easychannels.config.data.CustomChannelData;
+import net.riser876.easychannels.config.data.LocalChannelData;
 
 import java.nio.file.Files;
 import java.io.IOException;
@@ -52,15 +52,15 @@ public class Config {
         return configData;
     }
 
-    public static LocalData getLocalChannel() {
-        return configData.local;
+    public static LocalChannelData getLocalChannel() {
+        return configData.localChannel;
     }
 
-    public static List<ChannelData> getCustomChannels() {
-        return configData.channels;
+    public static List<CustomChannelData> getCustomChannels() {
+        return configData.customChannels;
     }
 
-    public static List<ChannelData> getEnabledCustomChannels() {
-        return configData.channels.stream().filter(channel -> channel.enabled).toList();
+    public static List<CustomChannelData> getEnabledCustomChannels() {
+        return configData.customChannels.stream().filter(channel -> channel.enabled).toList();
     }
 }

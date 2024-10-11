@@ -2,21 +2,18 @@ package net.riser876.easychannels.config.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ChannelData {
+public class CustomChannelData {
     @SerializedName("enabled")
     public boolean enabled = true;
 
     @SerializedName("command")
     public String command = "g";
 
-    @SerializedName("prefix")
-    public String prefix = "§d§l[GLOBAL]§l§d ";
-
-    @SerializedName("suffix ")
-    public String suffix  = "§d§l >> §l§d";
+    @SerializedName("format")
+    public String format = null;
 
     @SerializedName("permission")
-    public String permission = "example.global";
+    public String permission = null;
 
     @SerializedName("op")
     public int op = 0;

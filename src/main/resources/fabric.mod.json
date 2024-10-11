@@ -4,7 +4,9 @@
   "version": "${version}",
   "name": "EasyChannels",
   "description": "Chat channels for fabric",
-  "authors": [],
+  "authors": [
+    "Riser876"
+  ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/easychannels/icon.png",

@@ -52,12 +52,12 @@ public class Config {
         return configData;
     }
 
-    public static LocalChannelData getLocalChannel() {
-        return configData.localChannel;
+    public static int getLocalChannelRadius() {
+        return configData.localChannel.radius;
     }
 
-    public static List<CustomChannelData> getCustomChannels() {
-        return configData.customChannels;
+    public static boolean isLocalChannelEnabled() {
+        return configData.localChannel.enabled;
     }
 
     public static List<CustomChannelData> getEnabledCustomChannels() {

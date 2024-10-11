@@ -10,7 +10,7 @@ public class CustomChannelData {
     public String command = "g";
 
     @SerializedName("format")
-    public String format = null;
+    public String format = "${message}";
 
     @SerializedName("permission")
     public String permission = null;

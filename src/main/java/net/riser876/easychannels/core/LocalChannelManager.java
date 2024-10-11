@@ -29,7 +29,7 @@ public class LocalChannelManager {
         ServerWorld world = sender.getServerWorld();
 
         for (ServerPlayerEntity player : world.getEntitiesByClass(ServerPlayerEntity.class, boundingBox, entity -> true)) {
-            player.sendChatMessage(SentMessage.of((SignedMessage) message), false, params);
+            player.sendChatMessage(SentMessage.of(message), false, params);
         }
     }
 }

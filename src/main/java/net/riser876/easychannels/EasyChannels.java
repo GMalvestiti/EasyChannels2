@@ -1,8 +1,12 @@
 package net.riser876.easychannels;
 
 import net.fabricmc.api.ModInitializer;
+
 import net.riser876.easychannels.config.Config;
-import net.riser876.easychannels.core.ModuleLoader;
+import net.riser876.easychannels.core.GlobalChannelModule;
+import net.riser876.easychannels.core.LocalChannelModule;
+
+import net.riser876.easychannels.helpers.PlayerManagerHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,8 +17,22 @@ public class EasyChannels implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        Config.loadConfig();
+        Config.load();
         LOGGER.info("[EasyChannels] Configuration loaded");
-        ModuleLoader.register();
+        loadModules();
+    }
+
+    public void loadModules() {
+        if (Config.isLocalChannelEnabled()) {
+            LocalChannelModule.register();
+        }
+
+        if (Config.isGlobalChannelEnabled()) {
+            PlayerManagerHelper.load();
+        }
+
+        if (Config.isGlobalChannelEnabled()) {
+            GlobalChannelModule.register();
+        }
     }
 }

@@ -5,6 +5,8 @@ import net.minecraft.network.message.SignedMessage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Box;
+
+import net.riser876.easychannels.EasyChannels;
 import net.riser876.easychannels.config.Config;
 import net.riser876.easychannels.helpers.PlaceholderApiHelper;
 
@@ -13,14 +15,12 @@ public class LocalChannelModule {
     private static final Text LOCAL_CHANNEL_FORMAT_TEXT = PlaceholderApiHelper.getFormatText(Config.getLocalChannelFormat());
 
     public static void register() {
-        if (!Config.isLocalChannelEnabled()) {
-            return;
-        }
-
         ServerMessageEvents.ALLOW_CHAT_MESSAGE.register((message, sender, params) -> {
             sendMessageToNearbyPlayers(message, sender);
             return false;
         });
+
+        EasyChannels.LOGGER.info("[EasyChannels] Local channel module registered");
     }
 
     private static void sendMessageToNearbyPlayers(SignedMessage message, ServerPlayerEntity sender) {

@@ -15,7 +15,7 @@ public class Config {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static ConfigData configData = null;
 
-    public static void loadConfig() {
+    public static void load() {
         if (Files.notExists(CONFIG_PATH)) {
             loadDefaultConfig();
             return;

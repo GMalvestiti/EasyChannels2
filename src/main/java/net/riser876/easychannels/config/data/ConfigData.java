@@ -3,10 +3,10 @@ package net.riser876.easychannels.config.data;
 import com.google.gson.annotations.SerializedName;
 
 public class ConfigData {
-    @SerializedName("local")
+    @SerializedName("local_channel")
     public LocalChannelData localChannel = new LocalChannelData();
 
-    @SerializedName("channels")
+    @SerializedName("global_channel")
     public GlobalChannelData globalChannel = new GlobalChannelData();
 
     /*private static List<GlobalChannelData> createDefaultCustomChannels() {

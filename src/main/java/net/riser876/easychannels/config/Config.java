@@ -3,16 +3,12 @@ package net.riser876.easychannels.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
-
 import net.fabricmc.loader.api.FabricLoader;
 import net.riser876.easychannels.config.data.ConfigData;
-import net.riser876.easychannels.config.data.CustomChannelData;
-import net.riser876.easychannels.config.data.LocalChannelData;
 
-import java.nio.file.Files;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
 
 public class Config {
     public static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("easychannels.json");
@@ -48,10 +44,6 @@ public class Config {
         }
     }
 
-    public static ConfigData getConfigData() {
-        return configData;
-    }
-
     public static int getLocalChannelRadius() {
         return configData.localChannel.radius;
     }
@@ -60,7 +52,11 @@ public class Config {
         return configData.localChannel.enabled;
     }
 
-    public static List<CustomChannelData> getEnabledCustomChannels() {
-        return configData.customChannels.stream().filter(channel -> channel.enabled).toList();
+    public static String getLocalChannelFormat() {
+        return configData.localChannel.format;
+    }
+
+    public static boolean isGlobalChannelEnabled() {
+        return configData.globalChannel.enabled;
     }
 }

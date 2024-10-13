@@ -1,10 +1,8 @@
 package net.riser876.easychannels;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.riser876.easychannels.config.Config;
-
-import net.riser876.easychannels.core.LocalChannelManager;
+import net.riser876.easychannels.core.LocalChannelModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +15,6 @@ public class EasyChannels implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Hello Fabric world!");
         Config.loadConfig();
-        LocalChannelManager.init();
+        LocalChannelModule.register();
     }
 }

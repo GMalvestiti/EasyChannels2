@@ -14,7 +14,6 @@ import java.util.function.BiConsumer;
 
 public class GlobalChannelModule {
     private static final Text CHANNEL_FORMAT_TEXT = PlaceholderApiHelper.getFormatText(Config.getGlobalChannelFormat());
-    private static final String CHANNEL_LITERAL = Config.getGlobalChannelLiteral();
 
     public static void register() {
         BiConsumer<Text, ServerPlayerEntity> messageSender;
@@ -27,7 +26,7 @@ public class GlobalChannelModule {
 
         Object permission = PermissionsApiHelper.getPermission("easychannels.channel.global", Config.getGlobalChannelOperator());
 
-        CommandHelper.register(CHANNEL_LITERAL, permission, messageSender);
+        CommandHelper.register(Config.getGlobalChannelLiteral(), permission, messageSender);
 
         EasyChannels.LOGGER.info("[EasyChannels] Global channel module registered");
     }

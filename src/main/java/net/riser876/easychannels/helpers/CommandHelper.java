@@ -10,10 +10,11 @@ import java.util.function.BiConsumer;
 
 public class CommandHelper {
 
-    public static void register(String literal, BiConsumer<Text, ServerPlayerEntity> sendMessage) {
+    public static void register(String literal, Object permission, BiConsumer<Text, ServerPlayerEntity> sendMessage) {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(CommandManager.literal(literal)
                     .then(CommandManager.argument("message", StringArgumentType.greedyString())
+                            .requires((source) -> PermissionsApiHelper.hasPermissionWithNotification(permission, source.getPlayer()))
                             .executes((context) -> {
                                 Text message = Text.of(StringArgumentType.getString(context, "message"));
                                 ServerPlayerEntity sender = context.getSource().getPlayer();

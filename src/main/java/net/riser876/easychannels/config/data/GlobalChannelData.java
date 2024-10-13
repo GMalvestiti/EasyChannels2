@@ -15,9 +15,6 @@ public class GlobalChannelData {
     @SerializedName("format")
     public String format = "<yellow><bold>[G]</bold></yellow> <gold>${player}</gold> <gray>>></gray> <yellow>${message}";
 
-    @SerializedName("permission")
-    public String permission = null;
-
     @SerializedName("op")
     public int op = 0;
 }

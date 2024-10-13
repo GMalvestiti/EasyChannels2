@@ -44,12 +44,24 @@ public class Config {
         }
     }
 
-    public static int getLocalChannelRadius() {
-        return configData.localChannel.radius;
+    public static boolean isModEnabled() {
+        return configData.enable;
+    }
+
+    public static String getPermissionsRequiredMessage() {
+        return configData.permissionsRequiredMessage;
+    }
+
+    public static boolean isFabricPermissionsApiEnabled() {
+        return configData.enableFabricPermissionsApi;
     }
 
     public static boolean isLocalChannelEnabled() {
         return configData.localChannel.enabled;
+    }
+
+    public static int getLocalChannelRadius() {
+        return configData.localChannel.radius;
     }
 
     public static String getLocalChannelFormat() {

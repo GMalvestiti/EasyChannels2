@@ -12,9 +12,6 @@ public class LocalChannelData {
     @SerializedName("format")
     public String format = "<white><bold>[L]</bold></white> <gold>${player}</gold> <gray>>></gray> <white>${message}";
 
-    @SerializedName("permission")
-    public String permission = null;
-
     @SerializedName("op")
     public int op = 0;
 }

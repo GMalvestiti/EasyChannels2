@@ -12,11 +12,11 @@ base {
 
 
 repositories {
+    mavenCentral()
     maven {
         url "https://maven.nucleoid.xyz/"
         name "Nucleoid"
     }
-    mavenCentral()
 }
 
 dependencies {
@@ -27,7 +27,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation include("eu.pb4:placeholder-api:${project.placeholder_api_version}")
-    include(modImplementation("me.lucko:fabric-permissions-api:${project.permissions_api_version}"))
+    modImplementation include("me.lucko:fabric-permissions-api:${project.permissions_api_version}")
 }
 
 processResources {

@@ -25,7 +25,7 @@ public class GlobalChannelModule {
             messageSender = GlobalChannelModule::sendMessageToServer;
         }
 
-        Object permission = PermissionsApiHelper.getPermission("easychannels.channel.global", Config.getLocalChannelOperator());
+        Object permission = PermissionsApiHelper.getPermission("easychannels.channel.global", Config.getGlobalChannelOperator());
 
         CommandHelper.register(CHANNEL_LITERAL, permission, messageSender);
 

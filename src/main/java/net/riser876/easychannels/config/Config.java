@@ -56,6 +56,10 @@ public class Config {
         return configData.localChannel.format;
     }
 
+    public static int getLocalChannelOperator() {
+        return configData.localChannel.op;
+    }
+
     public static boolean isGlobalChannelEnabled() {
         return configData.globalChannel.enabled;
     }
@@ -70,5 +74,9 @@ public class Config {
 
     public static String getGlobalChannelFormat() {
         return configData.globalChannel.format;
+    }
+
+    public static int getGlobalChannelOperator() {
+        return configData.globalChannel.op;
     }
 }

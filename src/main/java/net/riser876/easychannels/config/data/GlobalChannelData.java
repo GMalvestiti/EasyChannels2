@@ -19,5 +19,5 @@ public class GlobalChannelData {
     public String permission = null;
 
     @SerializedName("op")
-    public Integer op = null;
+    public int op = 0;
 }

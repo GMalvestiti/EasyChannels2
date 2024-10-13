@@ -13,6 +13,7 @@ import net.riser876.easychannels.helpers.PlaceholderApiHelper;
 public class LocalChannelModule {
     private static final int LOCAL_CHANNEL_RADIUS = Config.getLocalChannelRadius();
     private static final Text LOCAL_CHANNEL_FORMAT_TEXT = PlaceholderApiHelper.getFormatText(Config.getLocalChannelFormat());
+    private static final int LOCAL_CHANNEL_OPERATOR = Config.getLocalChannelOperator();
 
     public static void register() {
         ServerMessageEvents.ALLOW_CHAT_MESSAGE.register((message, sender, params) -> {

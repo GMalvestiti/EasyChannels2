@@ -28,7 +28,7 @@ public class EasyChannels implements ModInitializer {
         }
 
         if (Config.isGlobalChannelEnabled()) {
-            PlayerManagerHelper.load();
+            PlayerManagerHelper.init();
         }
 
         if (Config.isGlobalChannelEnabled()) {

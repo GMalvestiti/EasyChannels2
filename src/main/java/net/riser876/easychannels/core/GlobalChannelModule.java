@@ -14,6 +14,7 @@ import java.util.function.BiConsumer;
 public class GlobalChannelModule {
     private static final Text GLOBAL_CHANNEL_FORMAT_TEXT = PlaceholderApiHelper.getFormatText(Config.getGlobalChannelFormat());
     private static final String GLOBAL_CHANNEL_LITERAL = Config.getGlobalChannelLiteral();
+    private static final int GLOBAL_CHANNEL_OPERATOR = Config.getGlobalChannelOperator();
 
     public static void register() {
         BiConsumer<Text, ServerPlayerEntity> messageSender;

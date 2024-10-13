@@ -6,7 +6,7 @@ import net.minecraft.server.PlayerManager;
 public class PlayerManagerHelper {
     public static PlayerManager PLAYER_MANAGER = null;
 
-    public static void load() {
+    public static void init() {
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
             PlayerManagerHelper.PLAYER_MANAGER = server.getPlayerManager();
         });

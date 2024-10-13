@@ -10,7 +10,7 @@ public class GlobalChannelData {
     public boolean dimensionOnly = false;
 
     @SerializedName("command")
-    public String command = "g";
+    public String literal = "g";
 
     @SerializedName("format")
     public String format = "<yellow><bold>[G]</bold></yellow> <gold>${player}</gold> <dark_gray>>></dark_gray> ${message}";

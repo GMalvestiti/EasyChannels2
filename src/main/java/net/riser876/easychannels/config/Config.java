@@ -59,4 +59,16 @@ public class Config {
     public static boolean isGlobalChannelEnabled() {
         return configData.globalChannel.enabled;
     }
+
+    public static boolean isGlobalChannelDimensionOnly() {
+        return configData.globalChannel.dimensionOnly;
+    }
+
+    public static String getGlobalChannelLiteral() {
+        return configData.globalChannel.literal;
+    }
+
+    public static String getGlobalChannelFormat() {
+        return configData.globalChannel.format;
+    }
 }

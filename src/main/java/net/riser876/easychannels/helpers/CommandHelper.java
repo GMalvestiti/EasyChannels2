@@ -6,7 +6,6 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
-import java.util.Objects;
 import java.util.function.BiConsumer;
 
 public class CommandHelper {

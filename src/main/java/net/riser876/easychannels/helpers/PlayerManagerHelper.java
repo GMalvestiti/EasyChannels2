@@ -2,7 +2,6 @@ package net.riser876.easychannels.helpers;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.server.PlayerManager;
-import net.riser876.easychannels.EasyChannels;
 
 public class PlayerManagerHelper {
     public static PlayerManager PLAYER_MANAGER = null;

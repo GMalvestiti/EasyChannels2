@@ -1,11 +1,9 @@
 package net.riser876.easychannels;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.riser876.easychannels.config.Config;
 import net.riser876.easychannels.core.GlobalChannelModule;
 import net.riser876.easychannels.core.LocalChannelModule;
-
 import net.riser876.easychannels.helpers.PermissionsApiHelper;
 import net.riser876.easychannels.helpers.PlayerManagerHelper;
 import org.slf4j.Logger;

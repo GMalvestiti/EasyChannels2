@@ -9,7 +9,7 @@ import net.riser876.easychannels.config.Config;
 import java.util.function.BiFunction;
 
 public class PermissionsApiHelper {
-    public static final Text PERMISSION_REQUIRED_MESSAGE_TEXT = PlaceholderApiHelper.getFormatText(Config.getPermissionsRequiredMessage());;
+    public static final String PERMISSION_REQUIRED_MESSAGE = Config.getPermissionsRequiredMessage();
 
     private static BiFunction<Object, ServerPlayerEntity, Boolean> permissionChecker;
 
@@ -46,7 +46,8 @@ public class PermissionsApiHelper {
     }
 
     public static void sendPermissionRequiredMessage(ServerPlayerEntity player) {
-        player.sendMessage(PERMISSION_REQUIRED_MESSAGE_TEXT, false);
+        Text text = PlaceholderApiHelper.formatPlayerMessageSimple(PERMISSION_REQUIRED_MESSAGE, player);
+        player.sendMessage(text, false);
     }
 
     public static Object getPermission(String permission, int operatorLevel) {

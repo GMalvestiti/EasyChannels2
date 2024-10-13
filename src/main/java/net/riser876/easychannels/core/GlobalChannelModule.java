@@ -16,10 +16,25 @@ public class GlobalChannelModule {
     private static final String GLOBAL_CHANNEL_LITERAL = Config.getGlobalChannelLiteral();
 
     public static void register() {
-        BiConsumer<Text, ServerPlayerEntity> messageSender = GlobalChannelModule::sendMessageToServer;
+        BiConsumer<Text, ServerPlayerEntity> messageSender;
+
+        if (Config.isGlobalChannelDimensionOnly()) {
+            messageSender = GlobalChannelModule::sendMessageToDimension;
+        } else {
+            messageSender = GlobalChannelModule::sendMessageToServer;
+        }
+
         CommandHelper.register(GLOBAL_CHANNEL_LITERAL, messageSender);
 
         EasyChannels.LOGGER.info("[EasyChannels] Global channel module registered");
+    }
+
+    private static void sendMessageToDimension(Text message, ServerPlayerEntity sender) {
+        Text text = PlaceholderApiHelper.formatPlayerMessage(GLOBAL_CHANNEL_FORMAT_TEXT, sender, message);
+
+        for (ServerPlayerEntity player : sender.getServerWorld().getPlayers()) {
+            player.sendMessage(text);
+        }
     }
 
     private static void sendMessageToServer(Text message, ServerPlayerEntity sender) {

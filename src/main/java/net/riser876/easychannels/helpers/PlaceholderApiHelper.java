@@ -9,15 +9,9 @@ import net.minecraft.text.Text;
 
 import java.util.Map;
 
-import static eu.pb4.placeholders.api.TextParserUtils.formatText;
-
 public class PlaceholderApiHelper {
     private static final NodeParser PARSER = NodeParser.merge(TextParserV1.DEFAULT, Placeholders.DEFAULT_PLACEHOLDER_PARSER);
     private static final Text EMPTY_TEXT = Text.of("");
-
-    public static Text getFormatText(String formatText) {
-        return formatText(formatText);
-    }
 
     private static Text parsePlaceholder(String text, ServerPlayerEntity sender) {
         return PARSER.parseText(text, PlaceholderContext.of(sender).asParserContext());

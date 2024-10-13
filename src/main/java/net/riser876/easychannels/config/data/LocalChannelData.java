@@ -10,7 +10,7 @@ public class LocalChannelData {
     public int radius = 50;
 
     @SerializedName("format")
-    public String format = "<gold>${player}</gold> <dark_gray>>></dark_gray> ${message}";
+    public String format = "<white><bold>[L]</bold></white> <gold>${player}</gold> <gray>>></gray> <white>${message}";
 
     @SerializedName("permission")
     public String permission = null;

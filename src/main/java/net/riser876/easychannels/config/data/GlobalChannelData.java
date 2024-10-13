@@ -13,7 +13,7 @@ public class GlobalChannelData {
     public String literal = "g";
 
     @SerializedName("format")
-    public String format = "<yellow><bold>[G]</bold></yellow> <gold>${player}</gold> <dark_gray>>></dark_gray> ${message}";
+    public String format = "<yellow><bold>[G]</bold></yellow> <gold>${player}</gold> <gray>>></gray> <yellow>${message}";
 
     @SerializedName("permission")
     public String permission = null;

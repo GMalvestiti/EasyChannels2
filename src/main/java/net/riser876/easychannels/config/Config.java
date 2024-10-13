@@ -12,7 +12,7 @@ import java.nio.file.Path;
 
 public class Config {
     public static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("easychannels.json");
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     private static ConfigData configData = null;
 
     public static void load() {
